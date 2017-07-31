@@ -70,6 +70,8 @@ def checkAnswers(userAnswer, actualAnswer, quiz, blankSpace):
         return newQuiz
     else:
         user_input_again = raw_input("Nope! Try again!")
+        if user_input_again == None:
+            user_input_again = ""
         checkAnswers(user_input_again, actualAnswer, quiz, blankSpace)
 
 
@@ -86,6 +88,8 @@ def chooseDifficulty(levelOfDifficulty):
     else:
         print "Invalid input, try again!"
         user_input_difficulty = raw_input("Enter Difficulty Level : ")
+        if user_input_difficulty == None:
+            user_input_difficulty = ""
         chooseDifficulty(user_input_difficulty)
 
 #this will allow me to simulate the quiz to easily identify mistakes and to experience for myself what the user will be experiencing
