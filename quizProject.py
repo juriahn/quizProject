@@ -70,7 +70,7 @@ def checkAnswers(userAnswer, actualAnswer, quiz, blankSpace):
         return newQuiz
     else:
         user_input_again = raw_input("Nope! Try again!")
-        checkAnswers(user_input_again, actualAnswer)
+        checkAnswers(user_input_again, actualAnswer, quiz, blankSpace)
 
 
 
