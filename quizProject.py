@@ -1,38 +1,35 @@
-#by Juri Ahn
-#Introduction commentary & selecting difficulty
+# Author: Juri Ahn
+# Intro and difficulty selection
 print "Hello! Let's take a quiz!"
 print "In this quiz, we will find out how much you know about StarCraft 2!"
 print "First, choose a difficulty level by typing in Beginner, Intermediate, or Expert"
 print "Remember, keep in mind singular or plural cues as well as capitalization!"
 
-
-
-#I will give 4 blank spaces for each difficulty
+# To be substituted for user answers
 blankSpaces = ["__1__", "__2__","__3__","__4__"]
 
-#Below, are three different quizzes; one for each Beginner, Intermediate, and Expert
-#Each quiz will ask questions varying in simplicity/complexity according to their difficulty
+# Three quizzes, one for each difficulty level
 
-#Beginner quiz below
+# Beginner
 beginnerQuiz = "So you're a beginner to StarCraft 2! If you know ANYTHING about StarCraft, you know there are __1__ \n" \
                "races to choose from! There are the Terrans, __2__, and Zergs! For this game, you need to collect\n" \
                "resources called __3__ and Vespene Gas in order to create units or buildings. Lastly, you should \n" \
                "constantly scout the enemy team to detect any __4__ on your base and to prevent losing critical units early game!!\n"
 
-#Answers for beginner quiz
+# Answers for beginner
 beginnerQuizAnswers = ["3", "Protoss", "Minerals", "attacks"]
 
-#Intermediate quiz
+#Intermediate
 intermediateQuiz = "Okay, so you know a bit about StarCraft! If you're familiar with the three races, you should already \n" \
                    "know that the Protoss' Nexus costs __1__ minerals to build. If you know that your opponent is a \n" \
                    "Zerg, you better scout early to make sure they don't send any __2__ your way to attack your base! Also look \n" \
                    "out for their scouting units called __3__ so your build doesn't get discovered! If you're a Terran, always save \n" \
                    "energy for __4__ to detect any attacks from invisible units."
 
-#Answers for intermediate quiz
+# Answers for intermediate
 intermediateQuizAnswers = ["400", "Zerglings", "Overlords", "scans"]
 
-#Expert quiz
+# Expert
 expertQuiz = "If you know StarCraft like the back of your hand, you shouldn't have a problem with this quiz, right? Being the expert that \n" \
              " you are, you know that micro-ing is extremely important for early game battles, when your army is smaller. __1__ step is an \n" \
              "extremely useful and effective tactic against non-ranged enemies. While you're meticulously managing your battles, you should \n" \
@@ -40,7 +37,7 @@ expertQuiz = "If you know StarCraft like the back of your hand, you shouldn't ha
              "you're a heavy stalker user, __3__ is an essential upgrade that is a must! Always keep track of enemy units going in, out, or even around\n" \
              "your base! Sometimes, a sneaky Zerg player will drop a __4__ worm in the corner of your base for an attack coming from the inside!\n"
 
-#Answers for expert quiz
+#Answers for expert
 expertQuizAnswers = ["Stutter","forge", "blink", "nydus"]
 
 def printLinesAboveAndUnder(lines):
@@ -48,7 +45,7 @@ def printLinesAboveAndUnder(lines):
     print lines
     print "________________________________________________________________________________________________________________________________________________"
 
-#this function will pass in the quiz with user input and return/replace answers
+# This function passes in the quiz with user input and returns/replaces answers
 def start_quiz(quiz, answers):
     printLinesAboveAndUnder(quiz)
     var_quiz = quiz
@@ -61,7 +58,8 @@ def start_quiz(quiz, answers):
     fourth_user_answer = raw_input("What is the fourth answer? ")
     checkAnswers(fourth_user_answer, answers[3], var_quiz, blankSpaces[3])
 
-#this function checks the user inputs to see if it matches up with the actual answers listed below each quiz//this function also replaces the inputs for the function above
+# Checks answers for correctness
+# Also replaces inputs for the above function
 def checkAnswers(userAnswer, actualAnswer, quiz, blankSpace):
     if userAnswer.lower() == actualAnswer.lower():
         newQuiz = quiz.replace(blankSpace, actualAnswer)
@@ -76,7 +74,7 @@ def checkAnswers(userAnswer, actualAnswer, quiz, blankSpace):
 
 
 
-#this function will aknowledge user choice in difficulty//the answers will also accept lowercased answers for user experience
+# Sets quiz difficulty
 def chooseDifficulty(levelOfDifficulty):
     if levelOfDifficulty.lower() ==  "Beginner".lower():
         start_quiz(beginnerQuiz,beginnerQuizAnswers)
@@ -92,7 +90,7 @@ def chooseDifficulty(levelOfDifficulty):
             user_input_difficulty = ""
         chooseDifficulty(user_input_difficulty)
 
-#this will allow me to simulate the quiz to easily identify mistakes and to experience for myself what the user will be experiencing
+# Debugging/UAT
 user_input_difficulty = raw_input("Enter Difficulty Level : ")
 chooseDifficulty(user_input_difficulty)
 
