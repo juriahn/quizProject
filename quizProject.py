@@ -29,7 +29,7 @@ intermediateQuiz = "Okay, so you know a bit about StarCraft! If you're familiar 
 # Answers for intermediate
 intermediateQuizAnswers = ["400", "Zerglings", "Overlords", "scans"]
 
-#Expert
+# Expert
 expertQuiz = "If you know StarCraft like the back of your hand, you shouldn't have a problem with this quiz, right? Being the expert that \n" \
              " you are, you know that micro-ing is extremely important for early game battles, when your army is smaller. __1__ step is an \n" \
              "extremely useful and effective tactic against non-ranged enemies. While you're meticulously managing your battles, you should \n" \
